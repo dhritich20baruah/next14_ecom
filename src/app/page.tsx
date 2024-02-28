@@ -10,8 +10,8 @@ export default async function Home() {
 
   return (
     <main>
-      <div className="flex-col justify-evenly md:flex md:flex-row">
-        <div className="text-center flex justify-center items-center w-[50%]">
+      <div className="flex-col-reverse justify-evenly md:flex md:flex-row">
+        <div className="text-center flex justify-center items-center md:w-[50%] w-[100%]">
           <p className="p-10">
             <span className="text-3xl">Experience Our New Product</span>
             <br />
@@ -24,7 +24,7 @@ export default async function Home() {
         <img
           src="https://i.postimg.cc/1Xv0nKNR/product1.jpg"
           alt=""
-          className="w-[50%]"
+          className="md:w-[50%] w-[100%]"
         />
       </div>
       {/* ABOUT */}
@@ -32,9 +32,9 @@ export default async function Home() {
         <img
           src="https://i.postimg.cc/MHmPsRMg/product5.jpg"
           alt=""
-          className="w-[50%] h-[40rem] object-cover"
+          className="md:w-[50%] w-[100%] h-[40rem] object-cover"
         />
-        <div className="text-center flex justify-center items-center w-[50%]">
+        <div className="text-center flex justify-center items-center md:w-[50%] w-[100%]">
           <div>
             <p className="text-4xl">ABOUT THE PRODUCT</p>
             <p className="p-10">
@@ -56,9 +56,9 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="features bg-black text-white p-10">
+      <div className="features bg-gray-900 text-white p-10">
         <h3 className="text-center text-3xl">FEATURES</h3>
-        <div className="flex text-center my-3">
+        <div className="md:flex md:flex-row flex-col text-center my-3">
           <div className="px-3">
             <i className="material-icons">explore</i>
             <h4 className="text-xl">Gyro and Accelerometer</h4>
@@ -99,12 +99,12 @@ export default async function Home() {
       </div>
        {/* Latest Products */}
        <h3 className="text-center my-8 text-3xl font-bold">Latest Products</h3>
-      <div className="latest-product my-10 flex mx-auto justify-evenly">
+      <div className="latest-product my-10 md:flex md:flex-row flex-col mx-auto justify-evenly">
         {latestProducts.map((element)=>{
           return(
-            <div key={element.id} className="text-center shadow-lg shadow-black mx-5 md:w-[30%]">
+            <div key={element.id} className="text-center shadow-lg shadow-black mx-5 md:w-[30%] p-5">
               <div className='card'>
-              <Link href={"/ProductDetails/" + element.id} style={{textDecorationLine: 'none'}} className="text-black flex flex-col justify-center items-center">
+              <Link href={"/Products/" + element.id} style={{textDecorationLine: 'none'}} className="text-black flex flex-col justify-center items-center">
               <img src={element.image} alt="" className='w-1/2 h-auto object-contain'/>
               <div className="card-body">
               <p className='text-lg font-semibold'>{element.name}</p>
