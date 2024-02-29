@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="bg-gray-600 p-3 md:flex justify-between sm:flex">
+      <nav className="bg-gray-700 p-3 md:flex justify-between sm:flex">
         <div className="flex justify-between">
           <Link href="/">
             <p className="font-bold text-3xl italic font-mono text-white">iWatch</p>
@@ -55,7 +55,7 @@ const Navbar = () => {
       </nav>
       <div className="mobile md:hidden z-30">
         {!visible && (
-          <ul className="space-y-1 text-center bg-gray-600 text-white w-[100%]">
+          <ul className="space-y-1 text-center bg-gray-700 text-white w-[100%]">
             <Link href="/">
               <li className="hover:cursor-pointer hover:bg-white hover:text-gray-600 p-3 border-b-2 border-white">
                 HOME
