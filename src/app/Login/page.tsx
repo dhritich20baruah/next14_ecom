@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import axios from "axios";
 const jwt = require("jsonwebtoken")
 import { useRouter } from "next/navigation";
+
 export default function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -43,7 +44,7 @@ export default function Login(){
                 <input type="text" id="email" name="email" className="p-2 bg-white" onChange={(e)=>setEmail(e.target.value)}/>
                 <label htmlFor="pasword" className="text-white">Password</label>
                 <input type="password" id="password" name="password" className="p-2 bg-white" onChange={(e)=>setPassword(e.target.value)}/>
-                <button className="p-2 bg-orange-600 text-white border-2 font-bold border-orange-600 hover:text-orange-600 hover:bg-white" onClick={handleSubmit}>LOG IN</button>
+                <button className="p-2 bg-orange-600 text-white border-2 font-bold hover:text-orange-600 hover:bg-white" onClick={handleSubmit}>LOG IN</button>
                 <p className="text-white my-3">Not registered. <Link href="/Register" className="text-blue-300 hover:text-orange-400">Click here</Link> to sign up.</p>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import DashboardTabs from "./DashboardTabs";
+
 export default function RootLayout({
   children,
 }: Readonly<{

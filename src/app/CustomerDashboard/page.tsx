@@ -1,8 +1,19 @@
-import DashboardTabs from "./DashboardTabs"
+"use client"
+import { useEffect, useState } from "react"
 
-export default async function CustomerDashboard(){
-    return(
-        <div className="md:flex md:flex-row flex-col">
+export default function CustomerDashboard(){
+    const [token, setToken] = useState('')
+
+    useEffect(()=>{
+        if(typeof window !== "undefined"){
+        const item = localStorage.getItem("token") as string
+        setToken(item)      
+        console.log(item, "token=",token)  
+    }
+    }, [])
+
+    return(        
+        <div className="">
      
         </div>
     )
