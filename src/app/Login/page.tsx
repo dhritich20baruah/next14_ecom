@@ -3,15 +3,13 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import axios from "axios";
 const jwt = require("jsonwebtoken")
-// import { useRouter } from "next/router";
-
+import { useRouter } from "next/navigation";
 export default function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [visible, setVisible] = useState(false);
     const [display, setDisplay] = useState(false);
-    // const router = useRouter()
-
+    const router = useRouter()
 
     const handleSubmit = async (event: any) => {
         event.preventDefault()
@@ -23,9 +21,11 @@ export default function Login(){
             const data = result.data
             if(data.token){
                 localStorage.setItem("token", data.token)
+                localStorage.setItem("customer_id", data.token.id)
                 alert('Sign In Successful')
                 const auth = jwt.decode(data.token)
-                // router.push('/')
+                console.log(auth)
+                router.push('/CustomerDashboard')
             }
             else {
                 alert("Please check email and password");

@@ -11,8 +11,6 @@ export const POST = async (req: Request, res: Response) => {
   }
   const { email, password } = await req.json();
 
-  console.log(email, password);
-
   try {
     const customer = await pool.query(
       `SELECT * FROM customer WHERE customer_email = $1`,
