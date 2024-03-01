@@ -2,16 +2,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { signUp } from "../../../utility/actions";
-import { useRouter } from "next/navigation";
-import Messages from "../../../utility/messages";
+
 export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const router = useRouter();
   const [visible, setVisible] = useState(false);
   const [success, setSuccess] = useState(false);
-  let content;
 
   const handleSubmit = async () => {
     const result = await signUp(name, email, password);
@@ -33,7 +30,7 @@ export default function Register() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      {!visible && (
+      {visible && (
         <div className="bg-red-600 text-white w-1/2 fixed z-20 top-14 left-[50%] translate-x-[-50%] my-5">
           <button className="absolute right-0 mx-3" onClick={toggleVisible}>
             X
